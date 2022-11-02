@@ -22,20 +22,18 @@ public class Nodo implements Comparable, Iterator{
 		return this.siguiente;
 	}
 
-	public Object getValor(){
+	public Comparable<Object> getValor(){
 		return valor;
 	}
  
 	@Override
-	public int compareTo(Object o) {
+	public int compareTo(Comparable<Object> o) {
 		Nodo otro = (Nodo) o;
 		return this.valor.compareTo(otro.getValor());
 	}
 
-
 	@Override
 	public boolean hasNext() {
-		System.out.println();
 		return this.iterador != null;
 	}
 
@@ -51,8 +49,8 @@ public class Nodo implements Comparable, Iterator{
 		return "Nodo [valor=" + valor + "]";
 	}
 	
-	public void setIterador(Nodo oto) {
-		this.iterador = oto;
+	public void setIterador(Nodo otro) {
+		this.iterador = otro;
 	}
 		
 }
