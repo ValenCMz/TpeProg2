@@ -31,8 +31,8 @@ public class Main {
 //		n2.setSiguiente(n3);
 //		n3.setSiguiente(n4);
 		
-		Comparator compAsc = new ComparadorAscendente();
-		Lista lista1 = new Lista(compAsc);
+//		Comparator compAsc = new ComparadorAscendente();
+		Lista lista1 = new Lista();
 //		lista1.setCabeza(n1);
 //		lista1.setFin(n4);
 //		
@@ -67,8 +67,8 @@ public class Main {
 	
 	    System.out.println("prueba de add");
 	    
-	    lista1.add(n1);
-	    lista1.add(n3);
+	    lista1.insertar(n1);
+	    lista1.insertar(n3);
 	    
 	    for(Nodo n: lista1) {
 	    	System.out.println(n);

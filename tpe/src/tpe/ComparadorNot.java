@@ -2,16 +2,16 @@ package tpe;
 
 import java.util.Comparator;
 
-public class ComparadorNot implements Comparator<Comparable<Object>>{
+public class ComparadorNot implements Comparator<Nodo>{
 
-	private Comparator<Object>comp;
+	private Comparator<Nodo> comp;
 	
-	public ComparadorNot(Comparator<Object>comp) {
+	public ComparadorNot(Comparator<Nodo>comp) {
 		this.comp = comp;
 	}
 
 	@Override
-	public int compare(Comparable<Object> o1, Comparable<Object> o2) {
+	public int compare(Nodo o1, Nodo o2) {
 		return comp.compare(o1, o2) * -1;
 	}
 

@@ -14,6 +14,10 @@ public class Lista implements Iterable<Nodo>{
 		this.criterioOrden = criterioOrden;
 	}
 	
+	public Lista() {
+		this.cabeza = null;
+	}
+	
 //	public void addNodo(Nodo nodo) {
 //		//si la cabeza es nulla lo añado ahi
 //		if(this.cabeza==null) {
@@ -28,35 +32,33 @@ public class Lista implements Iterable<Nodo>{
 //	
 	
 	//podria recibr un object en vez de un nodo para q sea mas reutilizable
-	public void add(Nodo nuevo) {
-		if(this.cabeza==null) {
-			this.setCabeza(nuevo);
-//			cabeza.setIterador(nuevo);
-		}
-		else {
-			for (Nodo n: this) {
-				if(n.compareTo(nuevo)==-1) {
-					n.setSiguiente(nuevo);
-				}
-			}
-		}
-	}
+//	public void add(Nodo nuevo) {
+//		if(this.cabeza==null) {
+//			this.setCabeza(nuevo);
+////			cabeza.setIterador(nuevo);
+//		}
+//		else {
+//			for (Nodo n: this) {
+//				if(n.compareTo(nuevo)==-1) {
+//					n.setSiguiente(nuevo);
+//				}
+//			}
+//		}
+//	}
 	
-	public void insertar(Nodo o) {
-		Nodo nuevo = new Nodo(o);
+	public void insertar(Nodo nuevo) {
 		if(cabeza == null) {// caso lista vacia
 			cabeza = nuevo;
 		} else {
-			
 			Nodo comparacion = cabeza;
 			boolean encontre = false;
-			int res = criterioOrden.compare(comparacion.getValor(), nuevo.getValor());
+			int res = criterioOrden.compare((Nodo)(comparacion.getValor()), (Nodo)(nuevo.getValor()));
 			if(res >= 1) { // caso nuevo deberia ser la raiz
 				nuevo.setSiguiente(cabeza);
 				cabeza = nuevo;
 			} else {
 				while(comparacion.getSiguiente() != null && !encontre) {
-					res = criterioOrden.compare(comparacion.getSiguiente().getValor(), nuevo.getValor());
+					res = criterioOrden.compare(comparacion.getSiguiente(), nuevo.getSiguiente());
 					if(res >= 1) { // caso nuevo deberia ir entre dos nodos
 						Nodo aux = comparacion.getSiguiente();
 						comparacion.setSiguiente(nuevo);

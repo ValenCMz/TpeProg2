@@ -2,11 +2,11 @@ package tpe;
 
 import java.util.Comparator;
 
-public class ComparadorAscendente implements Comparator<Comparable<Object>>{
+public class ComparadorAscendente implements Comparator<Nodo>{
+
 
 	@Override
-	public int compare(Comparable<Object> o1, Comparable<Object> o2) {
+	public int compare(Nodo o1, Nodo o2) {
 		return o1.compareTo(o2);
 	}
-
 }

@@ -2,10 +2,10 @@ package tpe;
 
 import java.util.Iterator;
 
-public class Nodo implements Comparable, Iterator{
+public class Nodo implements Comparable,Iterator{
 	
 	private Nodo iterador;
-	private Comparable<Object> valor;
+	private Comparable valor;
 	private Nodo siguiente;
 	
 
@@ -13,6 +13,7 @@ public class Nodo implements Comparable, Iterator{
 		this.valor = valor;
 		this.siguiente = null;
 	}
+
 
 	public void setSiguiente(Nodo nodo){
 		this.siguiente = nodo;
@@ -22,12 +23,12 @@ public class Nodo implements Comparable, Iterator{
 		return this.siguiente;
 	}
 
-	public Comparable<Object> getValor(){
+	public Comparable getValor(){
 		return valor;
 	}
- 
+	
 	@Override
-	public int compareTo(Comparable<Object> o) {
+	public int compareTo(Object o) {
 		Nodo otro = (Nodo) o;
 		return this.valor.compareTo(otro.getValor());
 	}
